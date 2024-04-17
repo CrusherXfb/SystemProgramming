@@ -51,14 +51,19 @@ public:
 	}
 };
 
-void main()
+int check_volume(int volume)
 {
-	setlocale(LC_ALL, "");
-	int volume = 100;
 	if (volume > MAX_TANK_VOLUME)
 		volume = MAX_TANK_VOLUME;
 	if (volume < MIN_TANK_VOLUME)
 		volume = MIN_TANK_VOLUME;
-	Tank tank(volume);
+	return volume;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "");
+	
+	Tank tank(check_volume(150));
 	tank.info();
 }
