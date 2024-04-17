@@ -41,12 +41,7 @@ public:
 	}
 	Tank(int volume):VOLUME(volume)
 	{
-		//if (volume < min_tank_volume)
-		//	volume = min_tank_volume;
-		//if (volume > max_tank_volume)
-		//	volume = max_tank_volume;
-		//this->volume = volume;
-		this->fuel_level = 0;
+		fuel_level = 0;
 		cout << "Tank is ready " << this << endl;
 	}
 	void info()const
@@ -59,6 +54,11 @@ public:
 void main()
 {
 	setlocale(LC_ALL, "");
-	Tank tank(50);
+	int volume = 100;
+	if (volume > MAX_TANK_VOLUME)
+		volume = MAX_TANK_VOLUME;
+	if (volume < MIN_TANK_VOLUME)
+		volume = MIN_TANK_VOLUME;
+	Tank tank(volume);
 	tank.info();
 }
