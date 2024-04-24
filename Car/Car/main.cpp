@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<windows.h>
 #include<conio.h>
 #include<thread>
@@ -7,7 +7,7 @@ using namespace std::chrono_literals;
 
 #define MIN_TANK_VOLUME 20
 #define MAX_TANK_VOLUME 120
-//директива define (Определить) создаёт макроопределение (макрос)
+//РґРёСЂРµРєС‚РёРІР° define (РћРїСЂРµРґРµР»РёС‚СЊ) СЃРѕР·РґР°С‘С‚ РјР°РєСЂРѕРѕРїСЂРµРґРµР»РµРЅРёРµ (РјР°РєСЂРѕСЃ)
 
 class Tank
 {
@@ -202,7 +202,7 @@ public:
 			speed -= acceleration;		
 		this_thread::sleep_for(1s);
 	}
-	//////////////для устранения ошибки при нажатии Esc
+	//////////////РґР»СЏ СѓСЃС‚СЂР°РЅРµРЅРёСЏ РѕС€РёР±РєРё РїСЂРё РЅР°Р¶Р°С‚РёРё Esc
 	void wind_stop() 
 	{
 		speed = -1;
@@ -243,7 +243,7 @@ public:
 	}
 	void free_wheeling()
 	{
-		while (speed != -1) //костыль
+		while (speed != -1) //РєРѕСЃС‚С‹Р»СЊ
 		{
 			if (speed - 1 < 0)
 				speed = 0;
@@ -327,7 +327,7 @@ void main()
 {
 	setlocale(LC_ALL, "");	
 #if defined TANK_CHECK
-	//если определено TANK_CHECK, то следующий код до дерективы #endif будет виден компилятору
+	//РµСЃР»Рё РѕРїСЂРµРґРµР»РµРЅРѕ TANK_CHECK, С‚Рѕ СЃР»РµРґСѓСЋС‰РёР№ РєРѕРґ РґРѕ РґРµСЂРµРєС‚РёРІС‹ #endif Р±СѓРґРµС‚ РІРёРґРµРЅ РєРѕРјРїРёР»СЏС‚РѕСЂСѓ
 	Tank tank(check_volume(150));
 	int fuel;
 	do
